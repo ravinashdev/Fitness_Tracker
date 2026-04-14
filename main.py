@@ -6,17 +6,13 @@ import httpx
 # from dotenv import load_dotenv
 # import os
 # variable = os.getenv("<ENV VARIABLE>")
-# --------.env.json file access for JSON structure--------#
-# .env.json file
-# import json
-# with open('.env.json') as f:
-#     config = json.load(f)
-# value = config.get('YOUR_KEY')
-# ---------------------------- CONSTANTS ------------------------------- #
 # load_dotenv()
+# --------.env.json file access for JSON structure--------#
+.env.json file
 import json
 with open('.env.json') as f:
     config = json.load(f)
+# ---------------------------- CONSTANTS ------------------------------- #
 CREDENTIALS = config.get("credentials")
 APP_ID = CREDENTIALS.get("x-app-id")
 API_KEY = CREDENTIALS.get("x-app-key")
