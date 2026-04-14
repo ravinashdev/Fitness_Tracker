@@ -48,10 +48,14 @@ async def main():
             with open('100days.env.json', "r") as f:
                 calorie_config = json.load(f)
             calorie_config["request_type"]["post_request"]["add_exercise"]["payload"]["query"] = activity
-            calorie_url = calorie_config["request_type"]["post_request"]["add_exercise"]["url"]
-            calorie_params = calorie_config["request_type"]["post_request"]["add_exercise"]["params"]
-            calorie_payload = calorie_config["request_type"]["post_request"]["add_exercise"]["payload"]
-            calorie_headers = calorie_config["request_type"]["post_request"]["add_exercise"]["headers"]
+            # calorie_url = calorie_config["request_type"]["post_request"]["add_exercise"]["url"]
+            # calorie_params = calorie_config["request_type"]["post_request"]["add_exercise"]["params"]
+            # calorie_payload = calorie_config["request_type"]["post_request"]["add_exercise"]["payload"]
+            # calorie_headers = calorie_config["request_type"]["post_request"]["add_exercise"]["headers"]
+            calorie_url = calorie_config.get("request_type",{}).get("post_request",{}).get("add_exercise",{}).get("url")
+            calorie_params = calorie_config.get("request_type",{}).get("post_request",{}).get("add_exercise",{}).get("params")
+            calorie_payload = calorie_config.get("request_type",{}).get("post_request",{}).get("add_exercise",{}).get("payload")
+            calorie_headers = calorie_config.get("request_type",{}).get("post_request",{}).get("add_exercise",{}).get("headers")
             with open('100days.env.json', 'w') as f:
                 json.dump(calorie_config, f, indent=4)
             # HTTP Request
@@ -75,10 +79,10 @@ async def main():
             with open('sheety.env.json', 'w') as f:
                 json.dump(sheety_config, f, indent=4)
             # print(sheety_config)
-            sheety_url = sheety_config["request_type"]["post_request"]["add_row"]["url"]
-            sheety_params = sheety_config["request_type"]["post_request"]["add_row"]["params"]
-            sheety_payload = sheety_config["request_type"]["post_request"]["add_row"]["payload"]
-            sheety_headers = sheety_config["request_type"]["post_request"]["add_row"]["headers"]
+            sheety_url = sheety_config.get("request_type",{}).get("post_request",{}).get("add_row",{}).get("url")
+            sheety_params = sheety_config.get("request_type",{}).get("post_request",{}).get("add_row",{}).get("params")
+            sheety_payload = sheety_config.get("request_type",{}).get("post_request",{}).get("add_row",{}).get("payload")
+            sheety_headers = sheety_config.get("request_type",{}).get("post_request",{}).get("add_row",{}).get("headers")
             # print(sheety_url)
             # print(sheety_params)
             # print(sheety_payload)
