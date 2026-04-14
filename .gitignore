@@ -183,7 +183,7 @@ venv/
 .venv/
 env/
 .env
-.env.json
+100days.env.json
 
 # Scratches and Consoles
 scratches.xml
