@@ -183,8 +183,8 @@ venv/
 .venv/
 env/
 .env
-100days.env.json
-sheety.env.json
+**.env.json
+
 
 # Scratches and Consoles
 scratches.xml
